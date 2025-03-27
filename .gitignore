@@ -178,3 +178,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# log files in input/files should be tracked
+!input_files/*.log
