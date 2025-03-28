@@ -26,6 +26,7 @@ def get_event_series(data: dict):
         "hotlapping": data["raceStats"]["hotlapping"],
         "participants": len(data["players"]),
     }
+
     return pd.Series(event_dict)
 
 
@@ -35,6 +36,7 @@ def get_driver_df(data: dict):
     for i, player in enumerate(data["players"]):
         driver = {
             "index": i,
+            "local_index": player["player"]["localIndex"],
             "name": player["player"]["name"],
             "steam_id": player["player"]["id"],
             "ai": player["player"]["ai"],
