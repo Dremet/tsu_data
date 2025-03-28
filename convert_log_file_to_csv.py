@@ -19,5 +19,5 @@ df_details = get_details_df(df_events, start_pos_by_driver_id)
 
 # output
 write_df_to_csv(input_file_path, df_details, ".main")
-write_df_to_csv(input_file_path, df_drivers, ".driver")
+write_df_to_csv(input_file_path, df_drivers, ".drivers")
 write_df_to_csv(input_file_path, df_compounds, ".compounds")
