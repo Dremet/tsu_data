@@ -12,7 +12,7 @@ input_file_path = Path(sys.argv[1])
 
 
 data = read_event_json(input_file_path)
-df_event = get_event_series(data)
+s_event = get_event_series(data)
 df_drivers = get_driver_df(data)
 df_race_results = get_race_results_df(data)
 df_fastest_lap_results = get_fastest_lap_results_df(data)
@@ -21,6 +21,8 @@ df_checkpoint_results = get_checkpoint_results_df(data)
 df_lap_results = extract_lap_results_from_cps(df_checkpoint_results, df_drivers)
 
 # # output
+df_event = s_event.to_frame().T
+
 write_df_to_csv(input_file_path, df_event, ".event")
 write_df_to_csv(input_file_path, df_drivers, ".drivers")
 write_df_to_csv(input_file_path, df_race_results, ".race-results")
